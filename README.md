@@ -27,7 +27,7 @@
     <td colspan=4><h4>常用DataBase</h4></td>
   </tr>
   <tr>
-    <td><a href="#Mysql">Mysql<br><small>关系型数据库</small></a></td>
+    <td><a href="#Mysql">Mysql<br><sub>关系型数据库</sub></a></td>
     <td><a href="#Redis">RedisRedis<br><small>高性能分布式缓存</small></a></td>
     <td><a href="#Mongo">Mongo<br>分布式文档存储</a></td>
     <td><a href="#Neo4j">Neo4j<br><font size=2>知识图谱存储</font></a></td>
@@ -54,7 +54,7 @@
     <td colspan=4><h4>消息中间件</h4></td>
   </tr>
   <tr>
-    <td><a href="#Kafka">Kafka<br><font size=2>高吞吐消息中间件</font></a></a></td>
+    <td><a href="#Kafka">Kafka<br><font size=2>高吞吐消息中间件</font></a></td>
     <td><a href="#RabbitMQ">RabbitMQ<br></a></td>
     <td><a href="#RocketMQ">RocketMQ<br></a></td>
     <td><a href="#ActiveMQ">ActiveMQ<br></a></td>
