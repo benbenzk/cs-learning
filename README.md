@@ -27,9 +27,9 @@
     <td colspan=4><h4>常用DataBase</h4></td>
   </tr>
   <tr>
-    <td><a href="#Mysql">Mysql<br><font size=2>关系型数据库</font></a></td>
-    <td><a href="#Redis">RedisRedis<br><font size=2>高性能分布式缓存</font></a></td>
-    <td><a href="#Mongo">Mongo<br><font size=2>分布式文档存储</font></a></td>
+    <td><a href="#Mysql">Mysql<br><small>关系型数据库</small></a></td>
+    <td><a href="#Redis">RedisRedis<br><small>高性能分布式缓存</small></a></td>
+    <td><a href="#Mongo">Mongo<br>分布式文档存储</a></td>
     <td><a href="#Neo4j">Neo4j<br><font size=2>知识图谱存储</font></a></td>
   </tr>
  	<tr>
