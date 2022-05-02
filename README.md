@@ -6,7 +6,7 @@
     <td><a href="#Java核心">Java核心</a></td>
     <td><a href="#数据结构与算法">数据结构与算法</a></td>
     <td><a href="#设计模式">设计模式</a></td>
-    <td><a href="#linux">Linux</a></td>
+    <td><a href="./linux/linux.md">Linux</a></td>
   </tr>
   <tr>
     <td colspan=4><h4>Web技术</h4></td>
@@ -56,10 +56,10 @@
     <td colspan=4><h4>Hadoop生态圈</h4></td>
   </tr>
   <tr>
-    <td><a href="">Hadoop<br><sub>分布式系统基础架构</sub></a></td>
-		<td><a href="">Hive<br><sub>数据仓库工具</sub></a></td>
-		<td><a href="">Hue<br><sub>web交互工具</sub></a></td>
-		<td><a href="">Flume<br><sub>数据采集工具</sub></a></td>
+    <td><a href="./hadoop/hadoop.md">Hadoop<br><sub>分布式系统基础架构</sub></a></td>
+    <td><a href="">Hive<br><sub>数据仓库工具</sub></a></td>
+    <td><a href="./hue/hue.md">Hue<br><sub>web交互工具</sub></a></td>
+    <td><a href="">Flume<br><sub>数据采集工具</sub></a></td>
   </tr>
   <tr>
     <td><a href="#Sqoop">Sqoop<br><sub>数据迁移工具</sub></a></td>
@@ -144,13 +144,7 @@
 
 [Hive调优策略](./hive/hive调优策略.md)
 
-[Hive案例](./hive/hive案例.md)
-
-## Hue
-
-[Hue安装部署](./hue/hue安装部署.md)
-
-[Hue整合Hadoop、Hive](./hue/hue整合hadoop与hive.md)
+[Hive案例](./hive/hive案例.md)./hue/hue整合hadoop与hive.md)
 
 ## Flume
 
@@ -161,11 +155,3 @@
 [flume基础应用](./flume/flume基础应用.md)
 
 [flume高级特性](./flume/flume高级特性.md)
-
-## Sqoop
-
-[sqoop安装配置](./sqoop/sqoop安装配置.md)
-
-[sqoop应用案例](./sqoop/sqoop应用案例.md)
-
-[Sqoop常用命令及参数](./sqoop/sqoop常用命令及参数.md)
