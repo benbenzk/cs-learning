@@ -6,7 +6,7 @@
     <td><a href="#Java核心">Java核心</a></td>
     <td><a href="#数据结构与算法">数据结构与算法</a></td>
     <td><a href="#设计模式">设计模式</a></td>
-    <td><a href="./linux/linux.md">Linux</a></td>
+    <td><a href="./linux/linux.md" target="_blank">Linux</a></td>
   </tr>
   <tr>
     <td colspan=4><h4>Web技术</h4></td>
