@@ -184,7 +184,7 @@
    fudge 127.127.1.0 stratum 10
    ```
 
-   ![](/Users/suker/Documents/GitProjects/bigdata-learning/hadoop/imgs/ntp.png)
+   ![ntp](./imgs/ntp.png)
 
    配置`/etc/sysconfig/ntpd`，保证BOIS与系统时间同步
 
@@ -298,7 +298,7 @@
 
 #### 第2节 hadoop目录简介
 
-![hadoop目录](/Users/suker/Documents/GitProjects/bigdata-learning/hadoop/imgs/hadoop目录.png)
+![hadoop目录](./imgs/hadoop目录.png)
 
 #### 第3节 集群配置
 
@@ -495,7 +495,7 @@ rsync和scp区别：用rsync做文件的复制要比scp的速度快，rsync只�
 hadoop namenode -format
    ```
 
-![hadoop namenode格式化](/Users/suker/Documents/GitProjects/bigdata-learning/hadoop/imgs/hadoop-namenode-format.png)
+![hadoop namenode格式化](./imgs/hadoop-namenode-format.png)
 
 ##### bigdata01上启动HDFS
 
@@ -505,7 +505,7 @@ hadoop namenode -format
 
 [查看HDFS界面 -bigdata01:50070 ](http://bigdata01:50070)
 
-![hadoop namenode view](/Users/suker/Documents/GitProjects/bigdata-learning/hadoop/imgs/hadoop-namenode-view.png)
+![hadoop namenode view](./imgs/hadoop-namenode-view.png)
 
 ##### bigdata03上启动YARN
 
@@ -515,7 +515,7 @@ start-yarn.sh
 
 > **注意：NameNode和ResourceManger不是在同一台机器，不能在NameNode上启动 YARN，应该在ResouceManager所在的机器上启动YARN。**
 
-![hadoop集群启动进程](/Users/suker/Documents/GitProjects/bigdata-learning/hadoop/imgs/hadoop-processor.png)
+![hadoop集群启动进程](./imgs/hadoop-processor.png)
 
 #### 第6节 集群测试
 
@@ -677,15 +677,15 @@ start-yarn.sh
 
 6. 查看日志 http://bigdata01:19888/jobhistory，最后如下图
 
-   ![hadoop-jobhistory-view](/Users/suker/Documents/GitProjects/bigdata-learning/hadoop/imgs/hadoop-jobhistory-view.png)
+   ![hadoop-jobhistory-view](./imgs/hadoop-jobhistory-view.png)
 
-   ![hadoop-mapreduce-job](/Users/suker/Documents/GitProjects/bigdata-learning/hadoop/imgs/hadoop-mapreduce-job.png)
+   ![hadoop-mapreduce-job](./imgs/hadoop-mapreduce-job.png)
 
-   ![hadoop-mapreduce-job-log](/Users/suker/Documents/GitProjects/bigdata-learning/hadoop/imgs/hadoop-mapreduce-job-log.png)
+   ![hadoop-mapreduce-job-log](./imgs/hadoop-mapreduce-job-log.png)
 
    全部日志
 
-   ![hadoop-mapreduce-job-log-detail](/Users/suker/Documents/GitProjects/bigdata-learning/hadoop/imgs/hadoop-mapreduce-job-log-detail.png)
+   ![hadoop-mapreduce-job-log-detail](./imgs/hadoop-mapreduce-job-log-detail.png)
 
 ## iTerm2
 
@@ -713,7 +713,7 @@ start-yarn.sh
 
 5. 设置iterm触发器
 
-   选择菜单iTerm2->Preferences...->Profiles，配置如下![profile配置](/Users/suker/Documents/GitProjects/bigdata-learning/hadoop/imgs/test-profiles.png)
+   选择菜单iTerm2->Preferences...->Profiles，配置如下![profile配置](./imgs/test-profiles.png)
 
    选择test中的Advanced -> Triggers -> edit, 分别添加send和recv规则
 
@@ -735,7 +735,7 @@ start-yarn.sh
      Instant: ✔︎
      ```
 
-   ![profiles-triggers配置](/Users/suker/Documents/GitProjects/bigdata-learning/hadoop/imgs/triggers-profiles.png)
+   ![profiles-triggers配置](./imgs/triggers-profiles.png)
 
 ###  step2 centos主机test配置
 
