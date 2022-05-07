@@ -142,9 +142,9 @@ Hive调优困难；
 
 >Hive安装包 - apache-hive-2.3.7-bin.tar.gz
 >
->MySQL安装包 - mysql-8.0.16-2.el7.aarch64.rpm-bundle.tar
+>MySQL安装包 - mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar 
 >
->MySQL的JDBC驱动程序 - mysql-connector-java-8.0.16.jar
+>MySQL的JDBC驱动程序 - mysql-connector-java-5.1.46.jar
 >
 >**安装步骤**
 >
@@ -165,27 +165,29 @@ Hive调优困难；
 1. 删除mariadb
 
    ```shell
-   [root@bigdata03 ~]# rpm -qa | grep mariadb
-   mariadb-libs-5.5.68-1.el7.aarch64
-   [root@bigdata03 ~]# rpm -e --nodeps mariadb-libs-5.5.68-1.el7.aarch64
+   # 查询是否安装了mariadb
+   rpm -qa | grep mariadb
+   # 删除mariadb
+   rpm -e --nodeps mariadb-libs-5.5.68-1.el7.x86_64
    ```
 
 2. 安装依赖
 
    ```
-   yum install -y perl
-   yum install -y net-tools
+   yum install -y perl net-tools
    ```
-
+   
 3. 安装MySQL
 
    ```shell
    cd /opt/soft/
-   tar xvf mysql-8.0.16-2.el7.aarch64.rpm-bundle.tar
-   rpm -ivh mysql-community-common-8.0.16-2.el7.aarch64.rpm
-   rpm -ivh mysql-community-libs-8.0.16-2.el7.aarch64.rpm
-   rpm -ivh mysql-community-client-8.0.16-2.el7.aarch64.rpm
-   rpm -ivh mysql-community-server-8.0.16-2.el7.aarch64.rpm
+   tar -xvf mysql-5.7.26-1.el7.x86_64.rpm-bundle.tar
+   
+   # 依次运行以下命令
+   rpm -ivh mysql-community-common-5.7.26-1.el7.x86_64.rpm
+   rpm -ivh mysql-community-libs-5.7.26-1.el7.x86_64.rpm
+   rpm -ivh mysql-community-client-5.7.26-1.el7.x86_64.rpm
+   rpm -ivh mysql-community-server-5.7.26-1.el7.x86_64.rpm
    ```
 
 4. 启动数据库
@@ -206,13 +208,14 @@ Hive调优困难；
 6. 修改root口令
 
    ```
-   #进入MySQL，使用前面查询到的口令
+   # 进入MySQL，使用前面查询到的口令
    mysql -u root -p
+   
    # 设置口令强度;将root口令设置为123456;刷新
-   mysql> set global validate_password.policy=0;
-   mysql> set global validate_password.length=1;
-   mysql> alter user root@localhost identified by '123456';
-   mysql> flush privileges;
+   set global validate_password_policy=0;
+   set global validate_password_length=1;
+   set password for 'root'@'localhost'=password('123456');
+   flush privileges;
    ```
 
 7. 创建hive用户
@@ -243,21 +246,20 @@ Hive调优困难；
    mv apache-hive-2.3.7-bin hive-2.3.7
    ```
 
-2. 修改环境变量
+2. 修改环境变量`/etc/profile`
 
    ```
-   #在/etc/profile文件中增加环境变量
    export HIVE_HOME=/opt/servers/hive-2.3.7
    export PATH=$PATH:$HIVE_HOME/bin
    ```
-
-   执行`source /etc/profile`使环境变量生效
-
+   
+执行`source /etc/profile`使环境变量生效
+   
 3. 修改Hive配置
 
    ```
-   [root@bigdata03 ~]# cd $HIVE_HOME/conf
-   [root@bigdata03 conf]# vi hive-site.xml
+   cd $HIVE_HOME/conf
+   vi hive-site.xml
    ```
 
    ```xml
@@ -273,7 +275,7 @@ Hive调优困难；
      <!-- 指定驱动程序 -->
      <property>
        <name>javax.jdo.option.ConnectionDriverName</name>
-       <value>com.mysql.cj.jdbc.Driver</value>
+       <value>com.mysql.jdbc.Driver</value>
        <description>Driver class name for a JDBC metastore</description>
      </property>
      <!-- 连接数据库的用户名 -->
@@ -299,22 +301,18 @@ Hive调优困难；
 
 4. 拷贝MySQL JDBC驱动程序
 
-   将mysql-connector-java-8.0.16.jar拷贝到$HIVE_HOME/lib
+   ```
+   cp /opt/software/mysql-connector-java-5.1.46.jar $HIVE_HOME/lib
+   ```
 
 5. 初始化元数据库
 
+   ```shell
+   schematool -dbType mysql -initSchema
    ```
-   [root@bigdata03 ~]# schematool -dbType mysql -initSchema
-   ......
-   Metastore connection URL:	 jdbc:mysql://bigdata03:3306/hivemetadata?createDatabaseIfNotExist=true&useSSL=false&serverTimezone=Asia/Shanghai
-   Metastore Connection Driver :	 com.mysql.cj.jdbc.Driver
-   Metastore connection User:	 hive
-   Starting metastore schema initialization to 2.3.0
-   Initialization script hive-schema-2.3.0.mysql.sql
-   Initialization script completed
-   schemaTool completed
-   ```
-
+   
+   ![hive-init-metastore](./imgs/hive-init-metastore.png)
+   
 6. 启动Hive，执行命令
 
    ```
@@ -385,14 +383,14 @@ job的reduce数必须为0或者1
 进入hive命令行的日志如下
 
 ```
-which: no hbase in (.:.:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin:/opt/servers/jdk1.8/bin:/opt/servers/hadoop-2.9.2/bin:/opt/servers/hadoop-2.9.2/sbin:/opt/servers/jdk1.8/bin:/opt/servers/hadoop-2.9.2/bin:/opt/servers/hadoop-2.9.2/sbin:/opt/servers/hive-2.3.7/bin)
+which: no hbase in (.:.:.:.:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/opt/servers/jdk1.8/bin:/opt/servers/jdk1.8/bin:/opt/servers/hadoop-2.9.2/bin:/opt/servers/hadoop-2.9.2/sbin:/root/bin:/opt/servers/jdk1.8/bin:/opt/servers/jdk1.8/bin:/opt/servers/hadoop-2.9.2/bin:/opt/servers/hadoop-2.9.2/sbin:/opt/servers/hive-2.3.7/bin)
 SLF4J: Class path contains multiple SLF4J bindings.
 SLF4J: Found binding in [jar:file:/opt/servers/hive-2.3.7/lib/log4j-slf4j-impl-2.6.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
 SLF4J: Found binding in [jar:file:/opt/servers/hadoop-2.9.2/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
 SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
 SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
 
-Logging initialized using configuration in file:/opt/servers/hive-2.3.7/conf/hive-log4j2.properties Async: true
+Logging initialized using configuration in jar:file:/opt/servers/hive-2.3.7/lib/hive-common-2.3.7.jar!/hive-log4j2.properties Async: true
 Hive-on-MR is deprecated in Hive 2 and may not be available in the future versions. Consider using a different execution engine (i.e. spark, tez) or using Hive 1.X releases.
 hive (default)>
 ```
@@ -406,9 +404,9 @@ jar:file:/opt/servers/hadoop-2.9.2/share/hadoop/common/lib/slf4j-log4j12-1.7.25.
 
 这里是hive中的一个日志依赖包和hadoop中的日志依赖包冲入了，我们删除Hive的日志依赖包，因为hadoop是共用的，尽量不要删它里面的东西。
 
-```
-[root@bigdata03 ~]# cd /opt/servers/hive-2.3.7/lib
-[root@bigdata03 lib]# mv log4j-slf4j-impl-2.6.2.jar log4j-slf4j-impl-2.6.2.jar.bak
+```shell
+cd /opt/servers/hive-2.3.7/lib
+mv log4j-slf4j-impl-2.6.2.jar log4j-slf4j-impl-2.6.2.jar.bak
 ```
 
 再次启动查看，剩下的就属于正常的了。
@@ -2928,7 +2926,7 @@ update zxz_data set nid = nid + 1;
    **配置规划**
 
    | 节点      | metastore | client |
-      | --------- | --------- | ------ |
+   | --------- | --------- | ------ |
    | bigdata01 | ✔️         |        |
    | bigdata02 |           | ✔️      |
    | bigdata03 | ✔️         |        |

@@ -42,7 +42,7 @@ HUE下载地址 https://docs.gethue.com/releases/
 
 Hue的安装并不是那么简单，官方并没有编译好的软件包，需要从github上下载源码、安装依赖、编译安装。以下详细讲解Hue下载、编译、安装的操作过程。
 
-安装Hue的节点上最好没有安装过MySQL，否则可能有版本冲突，这里选择将Hue安装在bigdata02上。
+安装Hue的节点上最好没有安装过MySQL，否则可能有版本冲突，这里选择将Hue安装在**bigdata02**上。
 
 > 1、下载软件包、上传、解压(hue-release-4.3.0.zip、apache-maven-3.6.3- bin.tar.gz)
 >
@@ -68,16 +68,14 @@ Hue的安装并不是那么简单，官方并没有编译好的软件包，需�
    # 需要python支持（Python2.7+/Python3.5+）
    python --version
    
-   export PYTHON_VER=python3.8
-   
    # 在CentOS系统中安装编译Hue需要的依赖库
-   sudo yum install ant asciidoc cyrus-sasl-devel cyrus-sasl-gssapi cyrus-sasl-plain gcc gcc-c++ krb5-devel libffi-devel libxml2-devel libxslt-devel make mysql mysql-devel openldap-devel python-devel sqlite-devel gmp-devel
+   yum install ant asciidoc cyrus-sasl-devel cyrus-sasl-gssapi cyrus-sasl-plain gcc gcc-c++ krb5-devel libffi-devel libxml2- devel libxslt-devel make mysql mysql-devel openldap-devel python-devel sqlite-devel gmp-devel
    
    yum install -y libtidy
    yum install -y openssl-devel
    yum install -y rsync
    ```
-
+   
    备注
 
    以上依赖仅适用CentOS/RHEL 7.X，其他情况请参考https://docs.gethue.com/administrator/installation/dependencies/
@@ -117,6 +115,13 @@ Hue的安装并不是那么简单，官方并没有编译好的软件包，需�
    python get-pip.py
    ```
 
+   设置pip镜像
+
+   ```
+   pip install pip -U
+   pip config set global.index-url https://pypi.douban.com/simple/
+   ```
+
    然后进入软件目录解压，编译
 
    ```
@@ -142,7 +147,6 @@ Hue的安装并不是那么简单，官方并没有编译好的软件包，需�
    在hdfs-site.xml中增加配置
 
    ```xml
-   <configuration>
      <!-- HiveServer2 连不上10000;启用 webhdfs 服务 -->
      <property>
        <name>dfs.webhdfs.enabled</name>
@@ -152,13 +156,12 @@ Hue的安装并不是那么简单，官方并没有编译好的软件包，需�
        <name>dfs.permissions.enabled</name>
        <value>false</value>
      </property>
-   </configuration>
    ```
-
+   
    在core-site.xml中增加配置
 
    ```xml
-     <property>
+  <property>
        <name>hadoop.proxyuser.hue.hosts</name>
        <value>*</value>
      </property>
@@ -175,11 +178,11 @@ Hue的安装并不是那么简单，官方并没有编译好的软件包，需�
        <value>*</value>
      </property>
    ```
-
+   
    增加httpfs-site.xml文件，加入配置
 
    ```xml
-   <configuration>
+<configuration>
      <!-- HUE -->
      <property>
        <name>httpfs.proxyuser.hue.hosts</name>
@@ -191,7 +194,7 @@ Hue的安装并不是那么简单，官方并没有编译好的软件包，需�
      </property>
    </configuration>
    ```
-
+   
    **备注：修改完HDFS相关配置后，需要把配置scp给集群中每台机器，重启hdfs服务。**
 
 6. Hue配置
@@ -294,7 +297,7 @@ Hue的安装并不是那么简单，官方并没有编译好的软件包，需�
    	# fs_defaultfs=hdfs://localhost:8020
    	fs_defaultfs=hdfs://bigdata01:9000
    	webhdfs_url=http://bigdata01:50070/webhdfs/v1
-   # 211 行
+   # 1003 行
    	hadoop_conf_dir=/opt/lagou/servers/hadoop-2.9.2/etc/hadoop
    	
    # [hadoop] -- [[yarn_clusters]] -- [[[default]]]

@@ -713,7 +713,7 @@ start-yarn.sh
 
 5. 设置iterm触发器
 
-   选择菜单iTerm2->Preferences...->Profiles，配置如下![profile配置](./imgs/test-profiles.png)
+   选择菜单iTerm2->Preferences...->Profiles
 
    选择test中的Advanced -> Triggers -> edit, 分别添加send和recv规则
 
@@ -734,8 +734,6 @@ start-yarn.sh
      Parameters: /usr/local/bin/iterm2-recv-zmodem.sh
      Instant: ✔︎
      ```
-
-   ![profiles-triggers配置](./imgs/triggers-profiles.png)
 
 ###  step2 centos主机test配置
 
