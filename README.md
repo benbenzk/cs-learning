@@ -1,6 +1,6 @@
 <table>
   <tr>
-    <td colspan=4><h4><i>编程基础</i></h4></td>
+    <td colspan=4><b><i>编程基础</i></b></td>
   </tr>
   <tr>
     <td><a target="_blank" href="./java/java.md" >Java核心</a></td>
@@ -9,7 +9,7 @@
     <td><a target="_blank" href="./linux/linux.md">Linux</a></td>
   </tr>
   <tr>
-    <td colspan=4><h4>Web技术</h4></td>
+    <td colspan=4><b><i>Web技术</i></b></td>
   </tr>
   <tr>
     <td><a target="_blank" href="">Html/Css/JavaScript<br><sub>页面设计语言</sub></a></td>
@@ -18,7 +18,7 @@
     <td><a target="_blank" href="">ECharts/HighCharts<br><sub>数据可视化</sub></a></td>
   </tr>
   <tr>
-    <td colspan=4><h4>常用DataBase</h4></td>
+    <td colspan=4><b><i>常用DataBase</i></b></td>
   </tr>
   <tr>
     <td><a target="_blank" href="./mysql/mysql.md">Mysql<br><sub>关系型数据库</sub></a></td>
@@ -27,7 +27,7 @@
     <td><a target="_blank" href="">Neo4j<br><sub>知识图谱存储</sub></a></td>
   </tr>
  	<tr>
-    <td colspan=4><h4>Java Web框架</h4></td>
+    <td colspan=4><b><i>Java Web框架</i></b></td>
   </tr>
  	<tr>
     <td><a target="_blank" href="">MyBatis</a></td>
@@ -36,7 +36,7 @@
     <td><a target="_blank" href="">SpringBoot</a></td>
   </tr>
   <tr>
-    <td colspan=4><h4>WEB服务器</h4></td>
+    <td colspan=4><b><i>WEB服务器</i></b></td>
   </tr>
   <tr>
     <td><a target="_blank" href="">Nginx</a></td>
@@ -45,7 +45,7 @@
     <td></td>
   </tr>
   <tr>
-    <td colspan=4><h4>消息中间件</h4></td>
+    <td colspan=4><b><i>消息中间件</i></b></td>
   </tr>
   <tr>
     <td><a target="_blank" href="./kafka/kafka.md">Kafka<br><sub>高吞吐消息中间件</sub></a></td>
@@ -54,7 +54,7 @@
     <td><a target="_blank" href="">ActiveMQ<br></a></td>
   </tr>
   <tr>
-    <td colspan=4><h4>Hadoop生态圈</h4></td>
+    <td colspan=4><b><i>Hadoop生态圈</i></b></td>
   </tr>
   <tr>
     <td><a target="_blank" href="./hadoop/hadoop.md">Hadoop<br><sub>分布式系统基础架构</sub></a></td>
@@ -75,7 +75,7 @@
     <td></td>
   </tr>
   <tr>
-    <td colspan=4><h4>Spark + Flink</h4></td>
+    <td colspan=4><b><i>Spark + Flink</i></b></td>
   </tr>
   <tr>
     <td><a target="_blank" href="">Scala</a></td>
@@ -84,7 +84,7 @@
     <td><a target="_blank" href=""></a></td>
   </tr>
   <tr>
-    <td colspan=4><h4>大数据新技术</h4></td>
+    <td colspan=4><b><i>大数据新技术</i></b></td>
   </tr>
   <tr>
     <td><a target="_blank" href="">ClickHouse</a></td>
@@ -93,7 +93,7 @@
     <td><a target="_blank" href="">Druid</a></td>
   </tr>
   <tr>
-    <td colspan=4><h4>ELK</h4></td>
+    <td colspan=4><b><i>ELK</i></b></td>
   </tr>
   <tr>
     <td><a target="_blank" href="">Elasticsearch<br><sub>全文搜索引擎</sub></a></td>
@@ -102,7 +102,7 @@
     <td></td>
   </tr>
   <tr>
-    <td colspan=4><h4>机器学习</h4></td>
+    <td colspan=4><b><i>机器学习</i></b></td>
   </tr>
   <tr>
     <td><a target="_blank" href="">Python</a></td>
@@ -111,7 +111,7 @@
     <td><a target="_blank" href="">Tensflow<br><sub>机器学习框架</sub></a></td>
   </tr>
    <tr>
-    <td colspan=4><h4>项目</h4></td>
+    <td colspan=4><b><i>项目</i></b></td>
   </tr>
    <tr>
     <td><a target="_blank" href="">电商离线数仓</a></td>
