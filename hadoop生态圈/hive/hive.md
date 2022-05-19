@@ -311,7 +311,7 @@ Hive调优困难；
    schematool -dbType mysql -initSchema
    ```
    
-   ![hive-init-metastore](./imgs/hive-init-metastore.png)
+   ![hive-init-metastore](imgs/hive-init-metastore.png)
    
 6. 启动Hive，执行命令
 
@@ -571,7 +571,7 @@ Hive支持关系型数据库中的绝大多数基本数据类型，同时也支�
 
 hive的数据类型是可以进行隐式转换的，基本类型遵循以下层次结构，按照这个层次结构，子类型到祖先类型允许隐式转换。
 
-![hive基本数据类型隐式转换](./imgs/hive基本数据类型隐式转换.png)
+![hive基本数据类型隐式转换](imgs/hive基本数据类型隐式转换.png)
 
 总结来说数据转换遵循以下规律
 
@@ -720,7 +720,7 @@ DDL（data definition language），数据定义语言，主要的命令有CREAT
 
 DDL主要用在定义、修改数据库对象的结构或数据类型
 
-![hive数据库架构](./imgs/hive数据库架构.png)
+![hive数据库架构](imgs/hive数据库架构.png)
 
 ### 数据库操作
 
@@ -2179,7 +2179,7 @@ select name, max(scorenum) max_num
    select ename, sal, deptno, sum(sal) over(partition by deptno order by sal) salsum from emp;
    ```
 
-   ![over orderby结果](./imgs/hive-over-orderby.png)
+   ![over orderby结果](imgs/hive-over-orderby.png)
 
     4. window子句
 
@@ -2193,7 +2193,7 @@ select name, max(scorenum) max_num
         - n following 组内当前行的后n行数据
         - Unbounded following 组内最后一行数据
 
-       ![hive function window](./imgs/hive-func-window.png)
+       ![hive function window](imgs/hive-func-window.png)
 
        ```sql
        -- rows between ... and ... 子句
@@ -2885,7 +2885,7 @@ update zxz_data set nid = nid + 1;
 
    内嵌模式使用的是内嵌的Derby数据库来存储元数据，也不需要额外起Metastore服 务。数据库和Metastore服务都嵌入在主Hive Server进程中。这个是默认的，配置 简单，但是一次只能一个客户端连接，适用于用来实验，不适用于生产环境。
 
-   ![hive metastore内嵌模式](./imgs/hive-metastore内嵌模式.png)
+   ![hive metastore内嵌模式](imgs/hive-metastore内嵌模式.png)
 
    **优点：**配置简单，解压hive安装包 bin/hive 启动即可使用;
 
@@ -2907,7 +2907,7 @@ update zxz_data set nid = nid + 1;
 
    本地模式不需要单独起metastore服务，用的是跟Hive在同一个进程里的metastore服务。也就是说当启动一个hive 服务时，其内部会启动一个metastore服务。hive根据hive.metastore.uris参数值来判断，如果为空，则为本地模式。
 
-   ![hive metastore本地模式](./imgs/hive-metastore本地模式.png)
+   ![hive metastore本地模式](imgs/hive-metastore本地模式.png)
 
    **缺点：**每启动一次hive服务，都内置启动了一个metastore；在hive-site.xml中暴露了数据库的连接信息;
 
@@ -2919,7 +2919,7 @@ update zxz_data set nid = nid + 1;
 
    **在生产环境中，建议用远程模式来配置Hive Metastore。**
 
-   ![hive-metastore远程模式](./imgs/hive-metastore远程模式.png)
+   ![hive-metastore远程模式](imgs/hive-metastore远程模式.png)
 
    在这种模式下，其他依赖Hive的软件都可以通过Metastore访问Hive。此时需要配置 hive.metastore.uris 参数来指定 metastore 服务运行的机器ip和端口，并且需要单独手动启动metastore服务。metastore服务可以配置多个节点上，避免单节点故障导致整个集群的hive client不可用。同时hive client配置多个metastore地址，会自动选择可用节点。
 
@@ -2978,7 +2978,7 @@ HiveServer2是一个服务端接口，使远程客户端可以执行对Hive的�
 
 Thrift是一种接口描述语言和二进制通讯协议，它被用来定义和创建跨语言的服务。 它被当作一个远程过程调用(RPC)框架来使用，是由Facebook为“大规模跨语言服务开发”而开发的。
 
-![hiveserver2架构](./imgs/hiveserver2架构.png)
+![hiveserver2架构](imgs/hiveserver2架构.png)
 
 HiveServer2(HS2)是一种允许客户端对Hive执行查询的服务。HiveServer2是HiveServer1的后续版本。HS2支持多客户端并发和身份验证，旨在为JDBC、ODBC等开放API客户端提供更好的支持。
 
@@ -3165,7 +3165,7 @@ TEXTFILE、SEQUENCEFILE的存储格式是基于行存储的；
 
 ORC和PARQUET 是基于列式存储的；
 
-![row based](./imgs/Row-based.png)
+![row based](imgs/Row-based.png)
 
 **TextFile**
 
@@ -3194,7 +3194,7 @@ RCFile全称Record Columnar File，列式记录文件，是一种类似于Sequen
 
 RCFile遵循的“**先水平划分，再垂直划分**”的设计理念。先将数据按行水平划分为行组，这样一行的数据就可以保证存储在同一个集群节点；然后在对行进行垂直划分。
 
-![RCFile](./imgs/RCFile.png)
+![RCFile](imgs/RCFile.png)
 
 - 一张表可以包含多个HDFS block
 - 在每个block中，RCFile以行组为单位存储其中的数据；row group又由三个部分组成
@@ -3213,7 +3213,7 @@ ORC File，它的全名是Optimized Row Columnar (ORC) file，其实就是对RCF
     - Rows Data：存放实际的数据。先取部分行，然后对这些行按列进行存储。 对每个列进行了编码，分成多个stream来存储
     - Stripe Footer：存放stripe的元数据信息
 
-![Column 2](./imgs/Column2.png)
+![Column 2](imgs/Column2.png)
 
 ORC在每个文件中提供了3个级别的索引：文件级、条带级、行组级。借助ORC提供的索引信息能加快数据查找和读取效率，规避大部分不满足条件的查询条件的文件和数据块。使用ORC可以避免磁盘和网络IO的浪费，提升程序效率，提升整个集群的工作负载。
 
@@ -3235,7 +3235,7 @@ Apache Parquet是Hadoop生态圈中一种新型列式存储格式，它可以兼
 
 Parquet文件以二进制方式存储，不能直接读取，文件中包括实际数据和元数据，Parquet格式文件是自解析的。
 
-![column-chunk](./imgs/column-chunk.png)
+![column-chunk](imgs/column-chunk.png)
 
 **Row group**
 
@@ -3352,7 +3352,7 @@ Hive作为大数据领域常用的数据仓库组件，在设计和开发阶段�
 
    **Tez**是一个构建于YARN之上的支持复杂的DAG（有向无环图）任务的数据处理框架。由Hontonworks开源，将MapReduce的过程拆分成若干个子过程，同时可以把多个mapreduce任务组合成一个较大的DAG任务，减少了MapReduce之间的文件存储，同时合理组合其子过程从而大幅提升MR作业的性能。
 
-   ![unneeded wrsos1](./imgs/unneeded-wrsos1.png)
+   ![unneeded wrsos1](imgs/unneeded-wrsos1.png)
 
 2. ### 优化器
 
@@ -3423,7 +3423,7 @@ Hive作为大数据领域常用的数据仓库组件，在设计和开发阶段�
 
    开启压缩之后，可以选择下面的压缩格式
 
-   ![压縮格式codec](./imgs/压縮格式codec.png)
+   ![压縮格式codec](imgs/压縮格式codec.png)
 
    关于压缩的编码器可以通过mapred-site.xml，hive-site.xml进行配置，也可以通过命令行进行配置，如：
 
@@ -4070,7 +4070,7 @@ SQL语句select count(*) from student_txt limit 10;
 
 SQL有4个stage，关系如下
 
-![hive案例复杂sql-stage-example1](./imgs/hive案例复杂sql-stage-example1.png)
+![hive案例复杂sql-stage-example1](imgs/hive案例复杂sql-stage-example1.png)
 
 其中:
 
@@ -4134,7 +4134,7 @@ Stage-0将数据显示在屏幕上
     group by s_age;
    ```
 
-   ![hive案例复杂sql-stage-example2](./imgs/hive案例复杂sql-stage-example2.png)
+   ![hive案例复杂sql-stage-example2](imgs/hive案例复杂sql-stage-example2.png)
 
     - 整个SQL语句分为 10 个Stage
     - 其中Stage-1、Stage-9包含 Map Task、Reduce Task

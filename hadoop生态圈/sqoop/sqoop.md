@@ -4,7 +4,7 @@ Sqoop是一款开源的工具，主要用于在Hadoop(Hive)与传统的数据库
 
 Sqoop项目开始于2009年，最早是作为Hadoop的一个第三方模块存在，后来为了让使用者能够快速部署，也为了让开发人员能够更快速的迭代开发，Sqoop独立成为一个Apache项目。
 
-![sqoop](./imgs/sqoop.png)
+![sqoop](imgs/sqoop.png)
 
 将导入或导出命令转换为MapReduce程序来实现。翻译出的MapReduce中主要是对inputformat和outputformat进行定制。
 

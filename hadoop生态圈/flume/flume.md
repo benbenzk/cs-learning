@@ -12,7 +12,7 @@ Flume提供对数据进行简单处理，并写到各种数据接收方的能力
 
 简单的说，Flume是**实时采集日志的数据采集引擎**。
 
-![flume](./imgs/flume.png)
+![flume](imgs/flume.png)
 
 Flume有3个重要组件：Source、Channel、Sink
 
@@ -63,7 +63,7 @@ Facebook开源的日志收集系统，它能够从各种日志源上收集日志
 
 ### 第2节 Flume体系结构
 
-![hive-agentjvm](./imgs/flume-AgentJVM.png)
+![hive-agentjvm](imgs/flume-AgentJVM.png)
 
 Flume架构中的组件
 
@@ -104,25 +104,25 @@ Flume架构中的组件
 
 此模式不建议桥接过多的flume数量， flume数量过多不仅会影响传输速率，而且一旦传输过程中某个节点flume宕机，会影响整个传输系统。
 
-![flume串行模式](./imgs/flume串行模式.png)
+![flume串行模式](imgs/flume串行模式.png)
 
 **复制模式（单Souce多Channel、Sink模式）**
 
 将事件流向一个或者多个目的地。这种模式将数据源复制到多个channel中，每个channel都有相同的数据，sink可以选择传送的不同的目的地。
 
-![flume复制模式](./imgs/flume复制模式.png)
+![flume复制模式](imgs/flume复制模式.png)
 
 **负载均衡模式（单Source、Channel多Sink）**
 
 将多个sink逻辑上分到一个sink组，flume将数据发送到不同的sink，主要解决负载均衡和故障转移问题。
 
-![flume负载均衡模式](./imgs/flume负载均衡模式.png)
+![flume负载均衡模式](imgs/flume负载均衡模式.png)
 
 **聚合模式**
 
 这种模式最常见的，也非常实用，日常web应用通常分布在上百个服务器，大者甚至上千个、上万个服务器。产生的日志，处理起来也非常麻烦。用这种组合方式能很好的解决这一问题，每台服务器部署一个flume采集日志，传送到一个集中收集日志的flume，再由此flume上传到hdfs、hive、hbase、消息队列中。
 
-![flume聚合模式](./imgs/flume聚合模式.png)
+![flume聚合模式](imgs/flume聚合模式.png)
 
 ### 第4节 Flume内部原理
 
@@ -130,7 +130,7 @@ Flume架构中的组件
 >
 > Channel：处理器、拦截器、选择器
 
-![flume内部原理](./imgs/flume内部原理.png)
+![flume内部原理](imgs/flume内部原理.png)
 
 **具体过程**
 
@@ -200,7 +200,7 @@ Flume支持的数据源种类有很多，可以来自directory、http、kafka等
    > 1. 支持二进制序列化方式，可以便捷，快速地处理大量数据；
    > 2. 动态语言友好，Avro提供的机制使动态语言可以方便地处理Avro数据；
 
-   ![flume-avro-source](./imgs/flume-avro-source.png)
+   ![flume-avro-source](imgs/flume-avro-source.png)
 
 2. Exec Source
 
@@ -538,7 +538,7 @@ Spooling Directory Source监听一个指定的目录，即只要向指定目录*
 
 - 最终的Sink分别选择HDFS、File Roll
 
-![flume监控日志文件采集到HDFS及本地文件系统](./imgs/flume监控日志文件采集到HDFS及本地文件系统.png)
+![flume监控日志文件采集到HDFS及本地文件系统](imgs/flume监控日志文件采集到HDFS及本地文件系统.png)
 
 实现步
 
@@ -718,7 +718,7 @@ Flume拦截器实现了*org.apache.flume.interceptor.Interceptor* 接口的类; 
    #输入hello world
    ```
 
-   ![flume-netcat-test-helloworld](./imgs/flume-netcat-test-helloworld.png)
+   ![flume-netcat-test-helloworld](imgs/flume-netcat-test-helloworld.png)
 
    可以看到header为空
 
@@ -764,7 +764,7 @@ Flume拦截器实现了*org.apache.flume.interceptor.Interceptor* 接口的类; 
    #输入hello world
    ```
 
-   ![flume时间拦截器](./imgs/flume时间拦截器.png)
+   ![flume时间拦截器](imgs/flume时间拦截器.png)
 
    可以看见 event header 中出现了时间戳信息。
 
@@ -831,7 +831,7 @@ host添加拦截器测试
    #输入hello
    ```
 
-   ![flume-host添加拦截器](./imgs/flume-host添加拦截器.png)
+   ![flume-host添加拦截器](imgs/flume-host添加拦截器.png)
 
    可以看见event headers 中 增加了主机名信息、时间戳信息。
 
@@ -1008,7 +1008,7 @@ a1.sinkgroups.g1.processor.selector = random
 
 Take事务同样也有`takeList`，HDFS Sink配置有一个`batch size`，这个参数决定Sink从Channel取数据的时候一次取多少个，所以该`batch size`得小于`takeList`的大小，而`takeList`的大小取决于`transaction capacity`的大小，同样是Channel中的参数。
 
-![flume事务](./imgs/flume事务.png)
+![flume事务](imgs/flume事务.png)
 
 **Take事务流程：**
 
@@ -1041,7 +1041,7 @@ Flume在数据进行采集传输的时候，有可能会造成数据的重复，
 
 ### 第5节 高可用案例-Agent故障转移
 
-![flume-agent故障转移高可用案例](./imgs/flume-agent故障转移高可用案例.png)
+![flume-agent故障转移高可用案例](imgs/flume-agent故障转移高可用案例.png)
 
 1. 配置环境
 

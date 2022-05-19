@@ -3,10 +3,10 @@
     <td colspan=4><b><i>编程基础</i></b></td>
   </tr>
   <tr>
-    <td><a target="_blank" href="./java/java.md" >Java核心</a></td>
+    <td><a target="_blank" href="大数据基础/java/java.md" >Java核心</a></td>
     <td><a target="_blank" href="">数据结构与算法</a></td>
     <td><a target="_blank" href="">设计模式</a></td>
-    <td><a target="_blank" href="./linux/linux.md">Linux</a></td>
+    <td><a target="_blank" href="大数据基础/linux/linux.md">Linux</a></td>
   </tr>
   <tr>
     <td colspan=4><b><i>Web技术</i></b></td>
@@ -21,7 +21,7 @@
     <td colspan=4><b><i>常用DataBase</i></b></td>
   </tr>
   <tr>
-    <td><a target="_blank" href="./mysql/mysql.md">Mysql<br><sub>关系型数据库</sub></a></td>
+    <td><a target="_blank" href="hadoop生态圈/mysql/mysql.md">Mysql<br><sub>关系型数据库</sub></a></td>
     <td><a target="_blank" href="./redis/redis.md">Redis<br><sub>高性能分布式缓存</sub></a></td>
     <td><a target="_blank" href="">Mongo<br><sub>分布式文档存储</sub></a></td>
     <td><a target="_blank" href="">Neo4j<br><sub>知识图谱存储</sub></a></td>
@@ -57,19 +57,19 @@
     <td colspan=4><b><i>Hadoop生态圈</i></b></td>
   </tr>
   <tr>
-    <td><a target="_blank" href="./hadoop/hadoop.md">Hadoop<br><sub>分布式系统基础架构</sub></a></td>
-    <td><a target="_blank" href="./hive/hive.md">Hive<br><sub>数据仓库工具</sub></a></td>
-    <td><a target="_blank" href="./hue/hue.md">Hue<br><sub>web交互工具</sub></a></td>
-    <td><a target="_blank" href="./flume/flume.md">Flume<br><sub>数据采集工具</sub></a></td>
+    <td><a target="_blank" href="hadoop生态圈/hadoop/hadoop.md">Hadoop<br><sub>分布式系统基础架构</sub></a></td>
+    <td><a target="_blank" href="hadoop生态圈/hive/hive.md">Hive<br><sub>数据仓库工具</sub></a></td>
+    <td><a target="_blank" href="hadoop生态圈/hue/hue.md">Hue<br><sub>web交互工具</sub></a></td>
+    <td><a target="_blank" href="hadoop生态圈/flume/flume.md">Flume<br><sub>数据采集工具</sub></a></td>
   </tr>
   <tr>
-    <td><a target="_blank" href="./sqoop/sqoop.md">Sqoop<br><sub>数据迁移工具</sub></a></td>
-    <td><a target="_blank" href="./impala/impala.md">Impala<br><sub>交互式查询工具</sub></a></td>
-    <td><a target="_blank" href="./zk/zk.md">Zookeeper<br><sub>分布式协调组件</sub></a></td>
+    <td><a target="_blank" href="hadoop生态圈/sqoop/sqoop.md">Sqoop<br><sub>数据迁移工具</sub></a></td>
+    <td><a target="_blank" href="hadoop生态圈/impala/impala.md">Impala<br><sub>交互式查询工具</sub></a></td>
+    <td><a target="_blank" href="hadoop生态圈/zk/zk.md">Zookeeper<br><sub>分布式协调组件</sub></a></td>
     <td><a target="_blank" href="./hbase/hbase.md">HBase<br><sub>海量列式非关系型数据库</sub></a></td>
   </tr>
   <tr>
-    <td><a target="_blank" href="./azkaban/azkaban.md">Azkaban<br><sub>任务调度系统</sub></a></td>
+    <td><a target="_blank" href="hadoop生态圈/azkaban/azkaban.md">Azkaban<br><sub>任务调度系统</sub></a></td>
     <td><a target="_blank" href=""></a></td>
     <td><a target="_blank" href=""></a></td>
     <td></td>
@@ -114,7 +114,7 @@
     <td colspan=4><b><i>项目</i></b></td>
   </tr>
    <tr>
-    <td><a target="_blank" href="">电商离线数仓</a></td>
+    <td><a target="_blank" href="./项目/电商离线数仓/电商离线数仓.md">电商离线数仓</a></td>
     <td><a target="_blank" href="">智慧物流大数据分析调度平台</a></td>
     <td><a target="_blank" href="">人才画像匹配推荐系统</a></td>
     <td></td>

@@ -4684,7 +4684,7 @@ Hue所支持的功能特性如下
 
 Hue是一个友好的界面集成框架，可以集成我们各种学习过的以及将要学习的框架，一个界面就可以做到查看以及执行所有的框架。
 
-![hue-server](./imgs/hue-server.png)
+![hue-server](imgsue-server.png)
 
 类似的产品还有Apache Zeppelin
 
@@ -4935,7 +4935,7 @@ Hue的安装并不是那么简单，官方并没有编译好的软件包，需�
 
    第一次访问的时候，需要设置超级管理员用户和密码。记住它(hue/123456)
 
-   ![hue index](./imgs/hue-index.png)
+   ![hue index](imgsue-index.png)
 
 
 ## Hue整合Hadoop、Hive、MySQL
@@ -6230,7 +6230,7 @@ Sqoop是一款开源的工具，主要用于在Hadoop(Hive)与传统的数据库
 
 Sqoop项目开始于2009年，最早是作为Hadoop的一个第三方模块存在，后来为了让使用者能够快速部署，也为了让开发人员能够更快速的迭代开发，Sqoop独立成为一个Apache项目。
 
-![sqoop](./imgs/sqoop.png)
+![sqoop](imgsqoop.png)
 
 将导入或导出命令转换为MapReduce程序来实现。翻译出的MapReduce中主要是对inputformat和outputformat进行定制。
 

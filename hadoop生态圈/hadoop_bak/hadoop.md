@@ -272,13 +272,13 @@
 
    ```shell
    cd /opt/software/
-   tar -zxvf hadoop-2.9.2.tar.gz -C ../servers/
+   tar -zxvf hadoop_bak-2.9.2.tar.gz -C ../servers/
    ```
 
 2. 配置环境变量，在`/etc/profile`文件末尾追加配置
 
    ```shell
-   export HADOOP_HOME=/opt/servers/hadoop-2.9.2
+   export HADOOP_HOME=/opt/servers/hadoop_bak-2.9.2
    export PATH=.:$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
    ```
 
@@ -481,7 +481,7 @@ rsync和scp区别：用rsync做文件的复制要比scp的速度快，rsync只�
    ```shell
    cd /opt/servers/
    rsync-script jdk1.8
-   rsync-script hadoop-2.9.2/
+   rsync-script hadoop_bak-2.9.2/
    rsync-script /etc/profile
    ```
 
@@ -492,7 +492,7 @@ rsync和scp区别：用rsync做文件的复制要比scp的速度快，rsync只�
 > **注意：如果集群是第一次启动，需要在Namenode所在节点格式化NameNode，非第一次不用执行格式化Namenode操作！！！**
 
    ```shell
-hadoop namenode -format
+hadoop_bak namenode -format
    ```
 
 ![hadoop namenode格式化](/Users/suker/Documents/GitProjects/bigdata-learning/hadoop/imgs/hadoop-namenode-format.png)

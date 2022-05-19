@@ -184,7 +184,7 @@
    fudge 127.127.1.0 stratum 10
    ```
 
-   ![ntp](./imgs/ntp.png)
+   ![ntp](imgs/ntp.png)
 
    配置`/etc/sysconfig/ntpd`，保证BOIS与系统时间同步
 
@@ -272,13 +272,13 @@
 
    ```shell
    cd /opt/software/
-   tar -zxvf hadoop-2.9.2.tar.gz -C ../servers/
+   tar -zxvf hadoop_bak-2.9.2.tar.gz -C ../servers/
    ```
 
 2. 配置环境变量，在`/etc/profile`文件末尾追加配置
 
    ```shell
-   export HADOOP_HOME=/opt/servers/hadoop-2.9.2
+   export HADOOP_HOME=/opt/servers/hadoop_bak-2.9.2
    export PATH=.:$PATH:$JAVA_HOME/bin:$HADOOP_HOME/bin:$HADOOP_HOME/sbin
    ```
 
@@ -298,7 +298,7 @@
 
 #### 第2节 hadoop目录简介
 
-![hadoop目录](./imgs/hadoop目录.png)
+![hadoop目录](imgs/hadoop目录.png)
 
 #### 第3节 集群配置
 
@@ -481,7 +481,7 @@ rsync和scp区别：用rsync做文件的复制要比scp的速度快，rsync只�
    ```shell
    cd /opt/servers/
    rsync-script jdk1.8
-   rsync-script hadoop-2.9.2/
+   rsync-script hadoop_bak-2.9.2/
    rsync-script /etc/profile
    ```
 
@@ -492,10 +492,10 @@ rsync和scp区别：用rsync做文件的复制要比scp的速度快，rsync只�
 > **注意：如果集群是第一次启动，需要在Namenode所在节点格式化NameNode，非第一次不用执行格式化Namenode操作！！！**
 
    ```shell
-hadoop namenode -format
+hadoop_bak namenode -format
    ```
 
-![hadoop namenode格式化](./imgs/hadoop-namenode-format.png)
+![hadoop namenode格式化](imgs/hadoop-namenode-format.png)
 
 ##### bigdata01上启动HDFS
 
@@ -505,7 +505,7 @@ hadoop namenode -format
 
 [查看HDFS界面 -bigdata01:50070 ](http://bigdata01:50070)
 
-![hadoop namenode view](./imgs/hadoop-namenode-view.png)
+![hadoop namenode view](imgs/hadoop-namenode-view.png)
 
 ##### bigdata03上启动YARN
 
@@ -515,7 +515,7 @@ start-yarn.sh
 
 > **注意：NameNode和ResourceManger不是在同一台机器，不能在NameNode上启动 YARN，应该在ResouceManager所在的机器上启动YARN。**
 
-![hadoop集群启动进程](./imgs/hadoop-processor.png)
+![hadoop集群启动进程](imgs/hadoop-processor.png)
 
 #### 第6节 集群测试
 
@@ -677,15 +677,15 @@ start-yarn.sh
 
 6. 查看日志 http://bigdata01:19888/jobhistory，最后如下图
 
-   ![hadoop-jobhistory-view](./imgs/hadoop-jobhistory-view.png)
+   ![hadoop-jobhistory-view](imgs/hadoop-jobhistory-view.png)
 
-   ![hadoop-mapreduce-job](./imgs/hadoop-mapreduce-job.png)
+   ![hadoop-mapreduce-job](imgs/hadoop-mapreduce-job.png)
 
-   ![hadoop-mapreduce-job-log](./imgs/hadoop-mapreduce-job-log.png)
+   ![hadoop-mapreduce-job-log](imgs/hadoop-mapreduce-job-log.png)
 
    全部日志
 
-   ![hadoop-mapreduce-job-log-detail](./imgs/hadoop-mapreduce-job-log-detail.png)
+   ![hadoop-mapreduce-job-log-detail](imgs/hadoop-mapreduce-job-log-detail.png)
 
 ## iTerm2
 

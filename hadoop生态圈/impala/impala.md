@@ -127,7 +127,7 @@ Yum源是Centos当中下载软件rpm包的地址，因此通过制作本地Yum�
 
    验证httpd工作是否正常，默认端口是80，可以省略，访问地址：http://bigdata01
 
-   ![httpd](./imgs/httpd.png)
+   ![httpd](imgs/httpd.png)
 
 2. 新建一个测试页面
 
@@ -280,7 +280,7 @@ yum install -y impala-shell
 
    查看目录`/opt/servers/hadoop-2.9.2/lib/native`
 
-   ![hadoop-native](./imgs/hadoop-native.png) 
+   ![hadoop-native](imgs/hadoop-native.png) 
 
    短路路读取配置步骤
 
@@ -360,7 +360,7 @@ yum install -y impala-shell
    ln -s /opt/servers/hive-2.3.7/lib/mysql-connector-java-5.1.46.jar /usr/share/java/mysql-connector-java.jar
    ```
 
-   ![impala-conf](./imgs/impala-conf.png)
+   ![impala-conf](imgs/impala-conf.png)
 
    修改bigtop的java_home路径
 
@@ -383,11 +383,11 @@ yum install -y impala-shell
 
    验证Impala启动结果
 
-   ![service-impala-bigdata03](./imgs/service-impala-bigdata03.png)
+   ![service-impala-bigdata03](imgs/service-impala-bigdata03.png)
 
-   ![service-impala-bigdata02](./imgs/service-impala-bigdata02.png)
+   ![service-impala-bigdata02](imgs/service-impala-bigdata02.png)
 
-   ![service-impala-bigdata01](./imgs/service-impala-bigdata01.png)
+   ![service-impala-bigdata01](imgs/service-impala-bigdata01.png)
 
    浏览器web界面验证
 
@@ -414,7 +414,7 @@ yum install -y impala-shell
 
    jps 时出现没有名字的进程 或者process information unavailable
 
-   ![jps-process-unavailable](./imgs/jps-process-unavailable.png)
+   ![jps-process-unavailable](imgs/jps-process-unavailable.png)
 
    解决方式`rm -rf /tmp/hsperfdata_*`
 
@@ -610,7 +610,7 @@ Impala是⼀个分布式，大规模并⾏处理(MPP)数据库引擎，它包括
 /usr/lib/impala/sbin/impalad -log_dir=/var/log/impala -catalog_service_host=bigdata03 -state_store_port=24000 -use_statestore -state_store_host=bigdata03 -be_port=22000
 ```
 
-![impala架构](./imgs/impala架构.png)
+![impala架构](imgs/impala架构.png)
 
 **impalad**
 
@@ -631,7 +631,7 @@ Impala是⼀个分布式，大规模并⾏处理(MPP)数据库引擎，它包括
 
 ### Impala查询
 
-![impala查询](./imgs/impala查询.png)
+![impala查询](imgs/impala查询.png)
 
 1. Client提交任务
 
@@ -678,7 +678,7 @@ select t1.n1, t2.n2, count(1) as c
 
 QueryPlanner生成单机的执行计划
 
-![单机执行计划流程](./imgs/单机执行计划流程.png)
+![单机执行计划流程](imgs/单机执行计划流程.png)
 
 分析上⾯的单机执⾏计划，第一步先去扫描t1表中需要的数据，如果数据⽂件存储是列式存储我们可以便利的扫描到所需的列id,n1;接着需要与t2表进行Join操作，扫描t2表与t1表类似获取到所需数据列id,n2;t1与t2表进⾏关联，关联之后再与t3表进⾏关联，这⾥Impala会使⽤谓词下推扫描t3表只取join所需数据;对group by进相应的aggregation操作，最终是排序取出指定数量的数据返回。 
 
@@ -688,11 +688,11 @@ QueryPlanner生成单机的执行计划
 
 所谓的分布式并⾏化执⾏计划就是在单机执⾏计划基础之上结合数据分布式存储的特点，按照任务的计算要求把单机执⾏计划拆分为多段子任务，每个子任务都是可以并行执行的。上面的单机执⾏计划转为分布式并⾏执⾏计划如下图所示:
 
-![分布式并行执行计划](./imgs/分布式并行执行计划.png)
+![分布式并行执行计划](imgs/分布式并行执行计划.png)
 
 分布式并⾏执⾏计划流程图
 
-![分布式并⾏执⾏计划流程](./imgs/分布式并⾏执⾏计划流程.png)
+![分布式并⾏执⾏计划流程](imgs/分布式并⾏执⾏计划流程.png)
 
 分布式执⾏计划中涉及到多表的Join，Impala会根据表的⼤小来决定Join的方式，主要有两种分别是Hash Join与Broadcast Join
 

@@ -1,6 +1,6 @@
 ## linux目录
 
-![目录图](./imgs/linux目录.png)
+![目录图](imgs/linux目录.png)
 
 | 目录名 | 说明                                                         |
 | ------ | ------------------------------------------------------------ |
@@ -104,7 +104,7 @@
 
 - `ls -l`文件属性信息
 
-  ![ls文件属性信息](./imgs/ls文件属性信息.png)
+  ![ls文件属性信息](imgs/ls文件属性信息.png)
 
   选一个文件，来看一下各个输出字段的含义
 
@@ -868,23 +868,23 @@ ef 26</pre></td>
     </tr>
     <tr>
       <td>默认按字符串排序</td>
-      <td><img src="./imgs/sort-1.png" height=100/></td>
+      <td><img src="imgs/sort-1.png" height=100/></td>
     </tr>
     <tr>
       <td>按照数据的数值大小排序</td>
-      <td><img src="./imgs/sort-2.png" height=100/></td>
+      <td><img src="imgs/sort-2.png" height=100/></td>
     </tr>
     <tr>
       <td>按字符串倒叙排序</td>
-      <td><img src="./imgs/sort-3.png" height=100/></td>
+      <td><img src="imgs/sort-3.png" height=100/></td>
     </tr>
     <tr>
       <td>按照数值倒序排序</td>
-      <td><img src="./imgs/sort-4.png" height=100/></td>
+      <td><img src="imgs/sort-4.png" height=100/></td>
     </tr>
     <tr>
       <td>对于文件稍复杂的数据，如果对数据排序上述命令已经无法实现我们的需求，这时我们可以结合参数<code>-k</code>表示数值是文件的第几列，<b>列编号从1开始</b></td>
-      <td><img src="./imgs/sort-5.png" height=100/></td>
+      <td><img src="imgs/sort-5.png" height=100/></td>
     </tr>
   </tbody>
 </table>
@@ -909,15 +909,15 @@ hello world</pre></td>
     </tr>
     <tr>
       <td>对连续的内容去重</td>
-      <td><img src="./imgs/uniq-1.png" height=80 /></td>
+      <td><img src="imgs/uniq-1.png" height=80 /></td>
     </tr>
     <tr>
       <td>在输出行前面加上数据在文件中重复出现的次数</td>
-      <td><img src="./imgs/uniq-2.png" height=80 /></td>
+      <td><img src="imgs/uniq-2.png" height=80 /></td>
     </tr>
     <tr>
       <td>返回文件中不重复的行</td>
-      <td><img src="./imgs/uniq-3.png" height=40/></td>
+      <td><img src="imgs/uniq-3.png" height=40/></td>
     </tr>
     <tr>
       <td>
@@ -925,7 +925,7 @@ hello world</pre></td>
         1. 首先对文件内容安字符串排序<br/>
         2. 然后使用管道命令<code>|</code>结合<code>uniq</code>获取去重后的数据
       </td>
-      <td><img src="./imgs/uniq-4.png" height=80/></td>
+      <td><img src="imgs/uniq-4.png" height=80/></td>
     </tr>
   </tbody>
 </table>
@@ -950,11 +950,11 @@ hello world</pre></td>
     </tr>
     <tr>
       <td><code>head -n</code>获取前n条数据</td>
-     	<td><img src="./imgs/head-1.png" height=80 /></td>
+     	<td><img src="imgs/head-1.png" height=80 /></td>
     </tr>
     <tr>
       <td>获取head.txt的topN数据</td>
-      <td><img src="./imgs/head-2.png" height=80 /></td>
+      <td><img src="imgs/head-2.png" height=80 /></td>
     </tr>
   </tbody>
 </table>
@@ -1210,11 +1210,11 @@ hello world</pre></td>
 
 - 和ps命令作用基本相同，唯一的区别是top命令能够动态显示进程信息
 
-  ![top信息](./imgs/top.png)
+  ![top信息](imgs/top.png)
 
   **注意：这里的CPU是总体CPU的使用情况，如果是多核CPU，想查看每个CPU的使用情况，可以在监控模式中按键`1`**
 
-  ![top-cpu信息](./imgs/top-cpu.png)
+  ![top-cpu信息](imgs/top-cpu.png)
 
   按键`q`退出监控模式
 
@@ -1266,30 +1266,30 @@ CentoS</pre></td>
     </tr>
     <tr>
       <td>查询含有cent的内容</td>
-      <td><img src="./imgs/grep-1.png" height=50 /></td>
+      <td><img src="imgs/grep-1.png" height=50 /></td>
     </tr>
     <tr>
       <td>查询以字母<b>u</b>开头的内容</td>
-      <td><img src="./imgs/grep-2.png" height=50 /></td>
+      <td><img src="imgs/grep-2.png" height=50 /></td>
     </tr>
     <tr>
       <td>忽略大小写查询含有cent的内容</td>
-      <td><img src="./imgs/grep-3.png" height=60 /></td>
+      <td><img src="imgs/grep-3.png" height=60 /></td>
     </tr>
     <tr>
       <td>查询带行号内容</td>
-      <td><img src="./imgs/grep-4.png" height=60 /></td>
+      <td><img src="imgs/grep-4.png" height=60 /></td>
     </tr>
     <tr>
       <td>查询关于python的进程</td>
-      <td><img src="./imgs/grep-5.png" height=60 /></td>
+      <td><img src="imgs/grep-5.png" height=60 /></td>
     </tr>
     <tr>
       <td>
         去除无用的python进程信息<br />
         -v：忽略包含制定字符串的内容
       </td>
-      <td><img src="./imgs/grep-6.png" height=50 /></td>
+      <td><img src="imgs/grep-6.png" height=50 /></td>
     </tr>
     <tr>
       <td>
@@ -1297,7 +1297,7 @@ CentoS</pre></td>
         <code>grep -E "str1|str2|str3|" filename</code><br/>
         <code>egrep "str1|str2|str3|" filename</code>
       </td>
-      <td><img src="./imgs/grep-7.png" height=150 /></td>
+      <td><img src="imgs/grep-7.png" height=150 /></td>
     </tr>
   </tbody>
 </table>
@@ -1324,7 +1324,7 @@ hello</pre></td>
     <tr>
       <td>在第2行下添加一行内容haha, 通过参数a</td>
       <td>
-        <img src="./imgs/sed-1.png" height=100 /><br />
+        <img src="imgs/sed-1.png" height=100 /><br />
         但是我们查看这个文件的内容发现数据<b>并没有被真正添加进去</b>。<br />
 				<b>注意</b>：sed默认不会直接修改文件数据，而是将数据复制到缓冲区中，
         修改也仅限于缓冲区中的数据，最后把缓冲区中的数据输出到控制台
@@ -1332,19 +1332,19 @@ hello</pre></td>
     </tr>
     <tr>
       <td>在文件最后一行后添加haha，通过参数$a</td>
-      <td><img src="./imgs/sed-2.png" height=100 /></td>
+      <td><img src="imgs/sed-2.png" height=100 /></td>
     </tr>
     <tr>
       <td>在第1行前面插入一行hahaha，通过参数i</td>
-      <td><img src="./imgs/sed-3.png" height=100 /></td>
+      <td><img src="imgs/sed-3.png" height=100 /></td>
     </tr>
     <tr>
       <td>删除第3行数据，通过参数d</td>
-      <td><img src="./imgs/sed-4.png" height=70 /></td>
+      <td><img src="imgs/sed-4.png" height=70 /></td>
     </tr>
     <tr>
       <td>删除最后一行，通过参数$d</td>
-      <td><img src="./imgs/sed-5.png" height=80 /></td>
+      <td><img src="imgs/sed-5.png" height=80 /></td>
     </tr>
     <tr>
       <td colspan=2>
@@ -1365,30 +1365,30 @@ hello</pre></td>
     </tr>
     <tr>
       <td>flags参数为空，默认匹配每行第一次出现的l</td>
-      <td><img src="./imgs/sed-6.png" height=100 /></td>
+      <td><img src="imgs/sed-6.png" height=100 /></td>
     </tr>
     <tr>
       <td>将每行第2次出现的l替换成m</td>
-      <td><img src="./imgs/sed-7.png" height=100 /></td>
+      <td><img src="imgs/sed-7.png" height=100 /></td>
     </tr>
     <tr>
       <td>将每行所有出现的l替换成m</td>
-      <td><img src="./imgs/sed-8.png" height=100 /></td>
+      <td><img src="imgs/sed-8.png" height=100 /></td>
     </tr>
     <tr>
       <td>将第2行第一次出现的l转换成m</td>
-      <td><img src="./imgs/sed-9.png" height=100 /></td>
+      <td><img src="imgs/sed-9.png" height=100 /></td>
     </tr>
     <tr>
       <td>将第2行所有出现的l转换成m</td>
-      <td><img src="./imgs/sed-10.png" height=100 /></td>
+      <td><img src="imgs/sed-10.png" height=100 /></td>
     </tr>
     <tr>
       <td colspan=2><b>注意了,注意了</b>，以上所有的操作都不会修改源文件的内容</td>
     </tr>
     <tr>
       <td><b>修改原文件的内容，使用sed -i</b><br />将每行所有出现的l替换成m，并保存到文件中</td>
-      <td><img src="./imgs/sed-i.png" height=120 /></td>
+      <td><img src="imgs/sed-i.png" height=120 /></td>
     </tr>
   </tbody>
 </table>
@@ -1440,47 +1440,47 @@ hello4</pre></td>
     </tr>
     <tr>
       <td>打印整个文本行内容</td>
-      <td><img src="./imgs/awk-print-1.png" height=80 /></td>
+      <td><img src="imgs/awk-print-1.png" height=80 /></td>
     </tr>
     <tr>
       <td>打印每行数据的第2个数据字段</td>
-      <td><img src="./imgs/awk-print-2.png" height=100 /></td>
+      <td><img src="imgs/awk-print-2.png" height=100 /></td>
     </tr>
     <tr>
       <td colspan=2><b>指定字段分割符：awk -F: '{print $1}' /etc/password</b></td>
     </tr>
     <tr>
       <td>通过-F指定分割符为逗号,</td>
-      <td><img src="./imgs/awk-F.png" height=100 /></td>
+      <td><img src="imgs/awk-F.png" height=100 /></td>
     </tr>
     <tr>
       <td colspan=2><b>通过正则表达式进行过滤</b></td>
     </tr>
     <tr>
       <td>打印包含hello,world字符串的数据字段</td>
-      <td><img src="./imgs/awk-regex.png" height=80 /></td>
+      <td><img src="imgs/awk-regex.png" height=80 /></td>
     </tr>
     <tr>
       <td colspan=2><b>对某一列数据匹配，$指匹配具体哪一列，~表示匹配，!~表示不匹配，对比逻辑放入到小括号()内</b></td>
     </tr>
     <tr>
       <td>第1列匹配包含hello的整个文本行内容</td>
-      <td><img src="./imgs/awk-match-1.png" height=100 /></td>
+      <td><img src="imgs/awk-match-1.png" height=100 /></td>
     </tr>
     <tr>
       <td>第2列匹配包含字母的第2列文本行内容</td>
-      <td><img src="./imgs/awk-match-2.png" height=80 /></td>
+      <td><img src="imgs/awk-match-2.png" height=80 /></td>
     </tr>
     <tr>
       <td>不匹配使用!~, 每行数据第一个数据不匹配hello</td>
-      <td><img src="./imgs/awk-not-match.png" height=40 /></td>
+      <td><img src="imgs/awk-not-match.png" height=40 /></td>
     </tr>
     <tr>
       <td colspan=2><b>与管道命令结合使用</b></td>
     </tr>
     <tr>
       <td>统计第1列匹配包含hello的文本总共几行</td>
-      <td><img src="./imgs/awk-wc.png" height=40 /></td>
+      <td><img src="imgs/awk-wc.png" height=40 /></td>
     </tr>
   </tbody>
 </table>
