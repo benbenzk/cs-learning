@@ -3,10 +3,34 @@
     <td colspan=4><b><i>编程基础</i></b></td>
   </tr>
   <tr>
-    <td><a target="_blank" href="大数据基础/java/java.md" >Java核心</a></td>
-    <td><a target="_blank" href="">数据结构与算法</a></td>
-    <td><a target="_blank" href="">设计模式</a></td>
-    <td><a target="_blank" href="大数据基础/linux/linux.md">Linux</a></td>
+    <td><a target="_blank" href="c语言.md">c语言</a></td>
+    <td><a target="_blank" href="Java.md" >Java</a></td>
+    <td><a target="_blank" href="Python.md" >Python</a></td>
+    <td><a target="_blank" href="Scala.md">Scala</a></td> 
+  </tr>
+  <tr>
+    <td><a target="_blank" href="linux.md">Linux</a></td>
+   	<td><a target="_blank" href="数据结构与算法.md">数据结构与算法</a></td> 
+    <td><a target="_blank" href="设计模式.md">设计模式</a></td>
+    <td><a target="_blank" href="网络协议.md">趣谈网络协议</a></td>
+  </tr>
+  <tr>
+    <td colspan=4><b><i>常用DataBase</i></b></td>
+  </tr>
+  <tr>
+    <td><a target="_blank" href="Database/MySQL.md">MySQL<br><sub>关系型数据库</sub></a></td>
+    <td><a target="_blank" href="">Redis<br><sub>高性能分布式缓存</sub></a></td>
+    <td><a target="_blank" href="">Mongo<br><sub>分布式文档存储</sub></a></td>
+    <td><a target="_blank" href="">Neo4j<br><sub>知识图谱存储</sub></a></td>
+  </tr>
+  <tr>
+    <td colspan=4><b><i>消息中间件</i></b></td>
+  </tr>
+  <tr>
+    <td><a target="_blank" href="./kafka/kafka.md">Kafka<br><sub>高吞吐消息中间件</sub></a></td>
+    <td><a target="_blank" href="">RabbitMQ<br></a></td>
+    <td><a target="_blank" href="">RocketMQ<br></a></td>
+    <td><a target="_blank" href="">ActiveMQ<br></a></td>
   </tr>
   <tr>
     <td colspan=4><b><i>Web技术</i></b></td>
@@ -16,15 +40,6 @@
     <td><a target="_blank" href="">Jquery<br><sub>快速简洁的Javascript框架</sub></a></td>
     <td><a target="_blank" href="">Vue.js<br><sub>渐进式JavaScript框架</sub></a></td>
     <td><a target="_blank" href="">ECharts/HighCharts<br><sub>数据可视化</sub></a></td>
-  </tr>
-  <tr>
-    <td colspan=4><b><i>常用DataBase</i></b></td>
-  </tr>
-  <tr>
-    <td><a target="_blank" href="hadoop生态圈/mysql/mysql.md">Mysql<br><sub>关系型数据库</sub></a></td>
-    <td><a target="_blank" href="./redis/redis.md">Redis<br><sub>高性能分布式缓存</sub></a></td>
-    <td><a target="_blank" href="">Mongo<br><sub>分布式文档存储</sub></a></td>
-    <td><a target="_blank" href="">Neo4j<br><sub>知识图谱存储</sub></a></td>
   </tr>
  	<tr>
     <td colspan=4><b><i>Java Web框架</i></b></td>
@@ -43,15 +58,6 @@
     <td><a target="_blank" href="">Tomcat</a></td>
     <td></td>
     <td></td>
-  </tr>
-  <tr>
-    <td colspan=4><b><i>消息中间件</i></b></td>
-  </tr>
-  <tr>
-    <td><a target="_blank" href="./kafka/kafka.md">Kafka<br><sub>高吞吐消息中间件</sub></a></td>
-    <td><a target="_blank" href="">RabbitMQ<br></a></td>
-    <td><a target="_blank" href="">RocketMQ<br></a></td>
-    <td><a target="_blank" href="">ActiveMQ<br></a></td>
   </tr>
   <tr>
     <td colspan=4><b><i>Hadoop生态圈</i></b></td>
@@ -93,19 +99,17 @@
     <td><a target="_blank" href="">Druid</a></td>
   </tr>
   <tr>
-    <td colspan=4><b><i>ELK</i></b></td>
+    <td colspan=3><b><i>ELK</i></b></td>
   </tr>
   <tr>
     <td><a target="_blank" href="">Elasticsearch<br><sub>全文搜索引擎</sub></a></td>
     <td><a target="_blank" href="">Logstash<br><sub>数据采集</sub></a></td>
     <td><a target="_blank" href="">Kibana<br><sub>数据可视化</sub></a></td>
-    <td></td>
   </tr>
   <tr>
     <td colspan=4><b><i>机器学习</i></b></td>
   </tr>
   <tr>
-    <td><a target="_blank" href="">Python</a></td>
     <td><a target="_blank" href="">统计学基础</a></td>
     <td><a target="_blank" href="">数据挖掘算法</a></td>
     <td><a target="_blank" href="">Tensflow<br><sub>机器学习框架</sub></a></td>
